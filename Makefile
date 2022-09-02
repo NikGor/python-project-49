@@ -15,16 +15,16 @@ selfcheck:
 
 check: selfcheck test lint
 
-build: check
+build:
 	poetry build
 	
 publish:
 	publish --dry-run
 	
 package-install:
-	python3 -m pip install --user dist/*.whl
+	python3 -m pip install --user dist/*.whl --force-reinstall
 
-brain-games:
-	poetry run brain-games
+brain-even:
+	poetry run brain-even
 
 .PHONY: install test lint selfcheck check build

@@ -3,6 +3,8 @@ __pycache__
 dist/
 *.pyc
 .venv/
+.github/
+.idea
 .coverage
 coverage.xml
 .pytest_cache/
