@@ -1,30 +1,19 @@
 #!/usr/bin/env python3
 
-import prompt
 import random
+from brain_games.game import welcome_user
+from brain_games.game import check_answer
+from brain_games.game import ITERATIONS_NUMBER
+from brain_games.game import MAX_VALUE
 
-# from scripts.brain_even import RULES
-# from scripts.brain_even import get_questions_and_answers
 
-ITERATIONS_NUMBER = 3
 RULES = 'Answer "yes" if given number is prime. Otherwise answer "no".'
-MAX_VALUE = 100
 
 
-def welcome_user():
-    print('Welcome to the Brain Games!')
-    name = prompt.string('May I have your name? ')
-    print(f'Hello, {name}!')
-    return name
-
-
-def get_questions_and_answers():
-    questions_and_answers = list()
-    for i in range(0, ITERATIONS_NUMBER):
-        rand = random.randint(0, MAX_VALUE)
-        question_and_answer = (rand, is_prime(rand) and 'yes' or 'no')
-        questions_and_answers.append(question_and_answer)
-    return questions_and_answers
+def get_question_and_answer():
+    rand = random.randint(0, MAX_VALUE)
+    question_and_answer = (rand, is_prime(rand) and 'yes' or 'no')
+    return question_and_answer
 
 
 def is_prime(number):
@@ -36,32 +25,15 @@ def is_prime(number):
     return True
 
 
-def check_answer(expected_answer, name):
-    user_answer = prompt.string('Your answer: ')
-    if user_answer == expected_answer:
-        print('Correct!')
-        return True
-    else:
-        print(f"{user_answer} is wrong answer ;(. "
-              f"Correct answer was {expected_answer}."
-              f"\nLet\'s try again, {name}!\n")
-        return False
-
-
 def main():
     name = welcome_user()
     print(RULES)
-    questions_and_answers = get_questions_and_answers()
-    counter = 0
     for i in range(0, ITERATIONS_NUMBER):
-        (question, answer) = questions_and_answers[i - 1]
+        (question, answer) = get_question_and_answer()
         print(f"Question: {question}")
-        if check_answer(answer, name):
-            counter += 1
-        else:
-            break
-    if counter == ITERATIONS_NUMBER:
-        print(f'Congratulations, {name}!')
+        if not check_answer(answer, name):
+            exit()
+    print(f'Congratulations, {name}!')
 
 
 if __name__ == '__main__':

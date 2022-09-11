@@ -1,14 +1,9 @@
-#!/usr/bin/env python3
-
-
 import prompt
 
-# from scripts.brain_even import RULES
-# from scripts.brain_even import get_questions_and_answers
-
-ITERATIONS_NUMBER = 3
-RULES = 'Answer "yes" if number even otherwise answer "no".'
-MAX_VALUE = 100
+ITERATIONS_NUMBER = 3  # количество вопросов-ответов в игре
+MAX_VALUE = 100  # максимальное значение для случайных чисел в играх
+CALC_OPERATIONS_NUMBER = 2  # количество операций в игре калькулятор
+CALC_MAX_VALUE = 10  # максимальное значение чисел для игры калькулятор
 
 
 def welcome_user():
@@ -31,7 +26,7 @@ def check_answer(expected_answer, name):
 
 
 def main():
-    print('')
+    welcome_user()
 
 
 if __name__ == '__main__':

@@ -13,8 +13,6 @@ lint:
 selfcheck:
 	poetry check
 
-check: selfcheck test lint
-
 build:
 	poetry build
 	
@@ -38,5 +36,3 @@ brain-progression:
 
 brain-prime:
 	poetry run brain-prime
-
-.PHONY: install test lint selfcheck check build
