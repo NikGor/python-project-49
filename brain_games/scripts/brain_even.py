@@ -22,18 +22,13 @@ def get_questions_and_answers():
     questions_and_answers = list()
     for i in range(0, ITERATIONS_NUMBER):
         rand = random.randint(0, MAX_VALUE)
-        question_and_answer = (rand, is_prime(rand) and 'yes' or 'no')
+        question_and_answer = (rand, is_even(rand) and 'yes' or 'no')
         questions_and_answers.append(question_and_answer)
     return questions_and_answers
 
 
-def is_prime(number):
-    if number <= 1:
-        return False
-    for i in range(2, number // 2):
-        if number % i == 0:
-            return False
-    return True
+def is_even(number):
+    return number % 2 == 0
 
 
 def check_answer(expected_answer, name):

@@ -7,7 +7,7 @@ import random
 # from scripts.brain_even import get_questions_and_answers
 
 ITERATIONS_NUMBER = 3
-RULES = 'What number is missing in the progression?'
+RULES = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 MAX_VALUE = 100
 
 
@@ -20,42 +20,20 @@ def welcome_user():
 
 def get_questions_and_answers():
     questions_and_answers = list()
-    min_progression_length = 5
-    additional_progression_length = 6
-    max_step_value = 10
     for i in range(0, ITERATIONS_NUMBER):
-        array = get_progression(min_progression_length,
-                                additional_progression_length,
-                                max_step_value)
-        hidden_index = random.randint(0, len(array) - 1)
-        question = progression_to_string(array, hidden_index)
-        answer = (array[hidden_index])
-        question_and_answer = (question, str(answer))
+        rand = random.randint(0, MAX_VALUE)
+        question_and_answer = (rand, is_prime(rand) and 'yes' or 'no')
         questions_and_answers.append(question_and_answer)
     return questions_and_answers
 
 
-def get_progression(min_progression_length,
-                    additional_progression_length,
-                    max_step_value):
-    length = min_progression_length + \
-        random.randint(0, additional_progression_length)
-    array = list()
-    array.append(random.randint(0, MAX_VALUE))
-    step = random.randint(1, max_step_value)
-    for i in range(1, length):
-        array.append(array[i - 1] + step)
-    return array
-
-
-def progression_to_string(progression, hidden_index):
-    string = ""
-    for i in range(0, hidden_index):
-        string += f'{progression[i]}, '
-    string += '.., '
-    for i in range(hidden_index + 1, len(progression)):
-        string += f'{progression[i]}, '
-    return string
+def is_prime(number):
+    if number <= 1:
+        return False
+    for i in range(2, number // 2):
+        if number % i == 0:
+            return False
+    return True
 
 
 def check_answer(expected_answer, name):

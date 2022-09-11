@@ -2,7 +2,6 @@
 
 
 import prompt
-import random
 
 # from scripts.brain_even import RULES
 # from scripts.brain_even import get_questions_and_answers
@@ -32,19 +31,7 @@ def check_answer(expected_answer, name):
 
 
 def main():
-    NAME = welcome_user()
-    print(RULES)
-    questions_and_answers = get_questions_and_answers()
-    counter = 0
-    for i in range(0, ITERATIONS_NUMBER):
-        (question, answer) = questions_and_answers[i - 1]
-        print(f"Question: {question}")
-        if check_answer(answer, NAME):
-            counter += 1
-        else:
-            break
-    if counter == ITERATIONS_NUMBER:
-        print(f'Congratulations, {NAME}!')
+    print('')
 
 
 if __name__ == '__main__':
