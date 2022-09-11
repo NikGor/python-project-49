@@ -2,8 +2,7 @@
 
 
 import random
-from brain_games.game import welcome_user
-from brain_games.game import check_answer
+from brain_games.game import game
 from brain_games.game import ITERATIONS_NUMBER
 from brain_games.game import CALC_OPERATIONS_NUMBER
 from brain_games.game import CALC_MAX_VALUE
@@ -28,15 +27,15 @@ def get_question_and_answer():
     return question_and_answer
 
 
-def main():
-    name = welcome_user()
-    print(RULES)
+def get_questions_and_answers():
+    questions_and_answers = list()
     for i in range(0, ITERATIONS_NUMBER):
-        (question, answer) = get_question_and_answer()
-        print(f"Question: {question}")
-        if not check_answer(answer, name):
-            exit()
-    print(f'Congratulations, {name}!')
+        questions_and_answers.append(get_question_and_answer())
+    return questions_and_answers
+
+
+def main():
+    game(RULES, get_questions_and_answers())
 
 
 if __name__ == '__main__':
