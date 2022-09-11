@@ -7,7 +7,7 @@ import random
 # from scripts.brain_even import get_questions_and_answers
 
 ITERATIONS_NUMBER = 3
-RULES = 'Answer "yes" if number even otherwise answer "no".'
+RULES = 'What is the result of the expression?'
 MAX_VALUE = 100
 
 

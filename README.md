@@ -5,4 +5,5 @@
 <h3 align="left">Demo:</h3>
 
 <a href="https://asciinema.org/a/6gXoT4jo8phDxDNmF5wW7PFQb">Game: "Even or not "</a><br> 
-<a href="https://asciinema.org/a/kHnvvMkN0Ie2UUv8uYXlFaw1a">Game: "Calculator "</a>
+<a href="https://asciinema.org/a/kHnvvMkN0Ie2UUv8uYXlFaw1a">Game: "Calculator "</a><br>
+<a href="https://asciinema.org/a/uR1UWpDUqGuWMA1Ci8afwtC9M">Game: "Greatest common divisor "</a><br>
