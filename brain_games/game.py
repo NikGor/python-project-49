@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+
 import prompt
 import random
 
@@ -49,19 +50,19 @@ def check_answer(expected_answer, name):
 
 
 def main():
-    name = welcome_user()
+    NAME = welcome_user()
     print(RULES)
     questions_and_answers = get_questions_and_answers()
     counter = 0
     for i in range(0, ITERATIONS_NUMBER):
         (question, answer) = questions_and_answers[i - 1]
         print(f"Question: {question}")
-        if check_answer(answer, name):
+        if check_answer(answer, NAME):
             counter += 1
         else:
             break
     if counter == ITERATIONS_NUMBER:
-        print(f'Congratulations, {name}!')
+        print(f'Congratulations, {NAME}!')
 
 
 if __name__ == '__main__':

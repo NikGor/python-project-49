@@ -19,21 +19,24 @@ def welcome_user():
 
 
 def get_questions_and_answers():
+    operations_number = 2
+    max_value = 10
     questions_and_answers = list()
     for i in range(0, ITERATIONS_NUMBER):
-        rand = random.randint(0, MAX_VALUE)
-        question_and_answer = (rand, is_prime(rand) and 'yes' or 'no')
+        random1 = random.randint(0, max_value)
+        random2 = random.randint(0, max_value)
+        operation = random.randint(1, operations_number)
+        question_and_answer = ('', '')
+        if operation == 1:
+            question = f'{random1} + {random2}'
+            answer = random1 + random2
+            question_and_answer = (question, str(answer))
+        elif operation == 2:
+            question = f'{random1} * {random2}'
+            answer = random1 * random2
+            question_and_answer = (question, str(answer))
         questions_and_answers.append(question_and_answer)
     return questions_and_answers
-
-
-def is_prime(number):
-    if number <= 1:
-        return False
-    for i in range(2, number // 2):
-        if number % i == 0:
-            return False
-    return True
 
 
 def check_answer(expected_answer, name):
