@@ -15,11 +15,11 @@
 
 <h3 align="left">Доступные команды после установки:</h3>
 
-<li><b>brain-even</b> - Определение четного числа</li>
-<li><b>brain-calc</b> - Калькулятор</li>
-<li><b>brain-gcd</b> - Определение наибольшего общего делителя</li>
-<li><b>brain-progression</b> - Поиск пропущенных чисел в последовательности</li>
-<li><b>brain-prime</b> - Определение простого числа</li>
+<b>brain-even</b> - Определение четного числа<br>
+<b>brain-calc</b> - Калькулятор<br>
+<b>brain-gcd</b> - Определение наибольшего общего делителя<br>
+<b>brain-progression</b> - Поиск пропущенных чисел в последовательности<br>
+<b>brain-prime</b> - Определение простого числа<br>
 
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/NikGor/python-project-49/workflows/hexlet-check/badge.svg)](https://github.com/NikGor/python-project-49/actions)<br>
