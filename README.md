@@ -27,8 +27,8 @@
 
 <h3 align="left">Demo:</h3>
 
-<a href="https://asciinema.org/a/76kjxFLKsJR47PzRA6XZlgFHd" target="_blank"><img src="https://asciinema.org/a/76kjxFLKsJR47PzRA6XZlgFHd.svg" height="400"/></a><br>
-<a href="https://asciinema.org/a/k8MOp51rZEp7WoqiyT2nHaL9t" target="_blank"><img src="https://asciinema.org/a/k8MOp51rZEp7WoqiyT2nHaL9t.svg" height="400"/></a><br>
-<a href="https://asciinema.org/a/uR1UWpDUqGuWMA1Ci8afwtC9M" target="_blank"><img src="https://asciinema.org/a/uR1UWpDUqGuWMA1Ci8afwtC9M.svg" height="400"/></a><br>
-<a href="https://asciinema.org/a/3xbmEaBoe2YgQ2Rc6mpaedWZs" target="_blank"><img src="https://asciinema.org/a/3xbmEaBoe2YgQ2Rc6mpaedWZs.svg" height="400"/></a><br>
-<a href="https://asciinema.org/a/9UCRGVzLZHpyPk8b9tX7xjAUU" target="_blank"><img src="https://asciinema.org/a/9UCRGVzLZHpyPk8b9tX7xjAUU.svg" height="400"/></a><br>
+[![asciicast](https://asciinema.org/a/76kjxFLKsJR47PzRA6XZlgFHd.svg)](https://asciinema.org/a/76kjxFLKsJR47PzRA6XZlgFHd)<br>
+[![asciicast](https://asciinema.org/a/k8MOp51rZEp7WoqiyT2nHaL9t.svg)](https://asciinema.org/a/k8MOp51rZEp7WoqiyT2nHaL9t)<br>
+[![asciicast](https://asciinema.org/a/uR1UWpDUqGuWMA1Ci8afwtC9M.svg)](https://asciinema.org/a/uR1UWpDUqGuWMA1Ci8afwtC9M)<br>
+[![asciicast](https://asciinema.org/a/3xbmEaBoe2YgQ2Rc6mpaedWZs.svg)](https://asciinema.org/a/3xbmEaBoe2YgQ2Rc6mpaedWZs)<br>
+[![asciicast](https://asciinema.org/a/9UCRGVzLZHpyPk8b9tX7xjAUU.svg)](https://asciinema.org/a/9UCRGVzLZHpyPk8b9tX7xjAUU)<br>
