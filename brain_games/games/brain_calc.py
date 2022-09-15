@@ -3,9 +3,8 @@
 
 import random
 from brain_games.game import game
-from brain_games.game import ITERATIONS_NUMBER
-from brain_games.game import CALC_OPERATIONS_NUMBER
-from brain_games.game import CALC_MAX_VALUE
+CALC_OPERATIONS_NUMBER = 2  # количество операций в игре калькулятор
+CALC_MAX_VALUE = 10  # максимальное значение чисел для игры калькулятор
 
 
 RULES = 'What is the result of the expression?'
@@ -27,15 +26,8 @@ def get_question_and_answer():
     return question_and_answer
 
 
-def get_questions_and_answers():
-    questions_and_answers = list()
-    for i in range(0, ITERATIONS_NUMBER):
-        questions_and_answers.append(get_question_and_answer())
-    return questions_and_answers
-
-
 def main():
-    game(RULES, get_questions_and_answers())
+    game(RULES, get_question_and_answer)
 
 
 if __name__ == '__main__':

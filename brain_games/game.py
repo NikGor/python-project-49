@@ -2,11 +2,6 @@ import prompt
 
 ITERATIONS_NUMBER = 3  # количество вопросов-ответов в игре
 MAX_VALUE = 100  # максимальное значение для случайных чисел в играх
-CALC_OPERATIONS_NUMBER = 2  # количество операций в игре калькулятор
-CALC_MAX_VALUE = 10  # максимальное значение чисел для игры калькулятор
-MIN_PROGRESSION_LENGTH = 5  # минимальная длина прогрессии
-ADDITIONAL_PROGRESSION_LENGTH = 5  # плюс к длине прогрессии
-MAX_STEP_VALUE = 10  # максимальный шаг прогрессии
 
 
 def welcome_user():
@@ -28,11 +23,11 @@ def check_answer(expected_answer, name):
         return False
 
 
-def game(rules, questions_and_answers):
+def game(rules, question_and_answer):
     name = welcome_user()
     print(rules)
     for i in range(0, ITERATIONS_NUMBER):
-        (question, answer) = questions_and_answers[i]
+        (question, answer) = question_and_answer()
         print(f"Question: {question}")
         if not check_answer(answer, name):
             exit()

@@ -3,11 +3,10 @@
 
 import random
 from brain_games.game import game
-from brain_games.game import ITERATIONS_NUMBER
 from brain_games.game import MAX_VALUE
-from brain_games.game import MIN_PROGRESSION_LENGTH
-from brain_games.game import ADDITIONAL_PROGRESSION_LENGTH
-from brain_games.game import MAX_STEP_VALUE
+MIN_PROGRESSION_LENGTH = 5  # минимальная длина прогрессии
+ADDITIONAL_PROGRESSION_LENGTH = 5  # плюс к длине прогрессии
+MAX_STEP_VALUE = 10  # максимальный шаг прогрессии
 
 
 RULES = 'What number is missing in the progression?'
@@ -22,13 +21,6 @@ def get_question_and_answer():
     answer = (array[hidden_index])
     question_and_answer = (question, str(answer))
     return question_and_answer
-
-
-def get_questions_and_answers():
-    questions_and_answers = list()
-    for i in range(0, ITERATIONS_NUMBER):
-        questions_and_answers.append(get_question_and_answer())
-    return questions_and_answers
 
 
 def get_progression(min_progression_length,
@@ -55,7 +47,7 @@ def progression_to_string(progression, hidden_index):
 
 
 def main():
-    game(RULES, get_questions_and_answers())
+    game(RULES, get_question_and_answer)
 
 
 if __name__ == '__main__':
