@@ -1,8 +1,4 @@
-#!/usr/bin/env python3
-
-
 import random
-from brain_games.game import game
 from brain_games.game import MAX_VALUE
 
 
@@ -23,11 +19,3 @@ def get_gcd(number1, number2):
         if (number1 % i == 0) and (number2 % i == 0):
             gcd = i
     return gcd
-
-
-def main():
-    game(RULES, get_question_and_answer)
-
-
-if __name__ == '__main__':
-    main()

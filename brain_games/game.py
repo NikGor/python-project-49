@@ -32,11 +32,3 @@ def game(rules, question_and_answer):
         if not check_answer(answer, name):
             exit()
     print(f'Congratulations, {name}!')
-
-
-def main():
-    welcome_user()
-
-
-if __name__ == '__main__':
-    main()

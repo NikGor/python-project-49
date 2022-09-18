@@ -1,14 +1,10 @@
-#!/usr/bin/env python3
-
-
 import random
-from brain_games.game import game
 from brain_games.game import MAX_VALUE
+
+
 MIN_PROGRESSION_LENGTH = 5  # минимальная длина прогрессии
 ADDITIONAL_PROGRESSION_LENGTH = 5  # плюс к длине прогрессии
 MAX_STEP_VALUE = 10  # максимальный шаг прогрессии
-
-
 RULES = 'What number is missing in the progression?'
 
 
@@ -44,11 +40,3 @@ def progression_to_string(progression, hidden_index):
     for i in range(hidden_index + 1, len(progression)):
         string += f'{progression[i]} '
     return string
-
-
-def main():
-    game(RULES, get_question_and_answer)
-
-
-if __name__ == '__main__':
-    main()

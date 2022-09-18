@@ -1,8 +1,4 @@
-#!/usr/bin/env python3
-
-
 import random
-from brain_games.game import game
 from brain_games.game import MAX_VALUE
 
 
@@ -17,11 +13,3 @@ def get_question_and_answer():
 
 def is_even(number):
     return number % 2 == 0
-
-
-def main():
-    game(RULES, get_question_and_answer)
-
-
-if __name__ == '__main__':
-    main()
