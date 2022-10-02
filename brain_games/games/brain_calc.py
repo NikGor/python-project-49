@@ -9,14 +9,18 @@ RULES = 'What is the result of the expression?'
 def get_question_and_answer():
     random1 = random.randint(0, CALC_MAX_VALUE)
     random2 = random.randint(0, CALC_MAX_VALUE)
-    operation = random.randint(1, CALC_OPERATIONS_NUMBER)
+    operation = random.choice(['+', '*', '-'])
     question_and_answer = ('', '')
-    if operation == 1:
+    if operation == '+':
         question = f'{random1} + {random2}'
         answer = random1 + random2
         question_and_answer = (question, str(answer))
-    elif operation == 2:
+    elif operation == '*':
         question = f'{random1} * {random2}'
         answer = random1 * random2
+        question_and_answer = (question, str(answer))
+    elif operation == '-':
+        question = f'{max(random1, random2)} - {min(random1, random2)}'
+        answer = max(random1, random2) - min(random1, random2)
         question_and_answer = (question, str(answer))
     return question_and_answer
