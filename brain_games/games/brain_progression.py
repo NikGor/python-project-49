@@ -11,7 +11,8 @@ RULES = 'What number is missing in the progression?'
 def get_question_and_answer():
     array = get_sequence()
     hidden_index = random.randint(0, len(array) - 1)
-    question = f"{' '.join(array[:hidden_index])} .. {' '.join(array[hidden_index + 1:])}"
+    question = f"{' '.join(array[:hidden_index])} .. " \
+               f"{' '.join(array[hidden_index + 1:])}"
     answer = (array[hidden_index])
     question_and_answer = (question, answer)
     return question_and_answer
