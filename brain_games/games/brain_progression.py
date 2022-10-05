@@ -12,7 +12,7 @@ def get_question_and_answer():
     array = get_sequence()
     hidden_index = random.randint(0, len(array) - 1)
     question = f"{' '.join(array[:hidden_index])} .. " \
-               f"{' '.join(array[hidden_index + 1:])}"
+               f"{' '.join(array[hidden_index + 1:])}".strip()
     answer = (array[hidden_index])
     question_and_answer = (question, answer)
     return question_and_answer
