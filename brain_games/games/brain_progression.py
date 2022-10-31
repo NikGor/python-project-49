@@ -1,5 +1,5 @@
 import random
-from brain_games.game import MAX_VALUE
+from brain_games.engine import MAX_VALUE
 
 
 MIN_SEQUENCE_LENGTH = 5  # минимальная длина прогрессии
@@ -9,7 +9,10 @@ RULES = 'What number is missing in the progression?'
 
 
 def get_question_and_answer():
-    array = get_sequence()
+    initial_term = random.randint(0, MAX_VALUE)
+    number_of_terms = random.randint(MIN_SEQUENCE_LENGTH, MAX_SEQUENCE_LENGTH)
+    difference = random.randint(1, DIFFERENCE)
+    array = get_sequence(initial_term, difference, number_of_terms)
     hidden_index = random.randint(0, len(array) - 1)
     question = f"{' '.join(array[:hidden_index])} .. " \
                f"{' '.join(array[hidden_index + 1:])}".strip()
@@ -18,9 +21,6 @@ def get_question_and_answer():
     return question_and_answer
 
 
-def get_sequence():
-    initial_term = random.randint(0, MAX_VALUE)
-    number_of_terms = random.randint(MIN_SEQUENCE_LENGTH, MAX_SEQUENCE_LENGTH)
-    difference = random.randint(1, DIFFERENCE)
+def get_sequence(initial_term, difference, number_of_terms):
     last_term = initial_term + difference * number_of_terms
     return [str(x) for x in range(initial_term, last_term, difference)]
