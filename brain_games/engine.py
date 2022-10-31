@@ -1,16 +1,16 @@
 import prompt
 
-ITERATIONS_NUMBER = 3  # количество вопросов-ответов в игре
+ROUNDS_COUNT = 3  # количество вопросов-ответов в игре
 MAX_VALUE = 100  # максимальное значение для случайных чисел в играх
 
 
-def game(rules, question_and_answer):
+def run(game):
     print('Welcome to the Brain Games!')
     name = prompt.string('May I have your name? ')
     print(f'Hello, {name}!')
-    print(rules)
-    for i in range(0, ITERATIONS_NUMBER):
-        (question, answer) = question_and_answer()
+    print(game.RULES)
+    for i in range(0, ROUNDS_COUNT):
+        (question, answer) = game.get_question_and_answer()
         print(f"Question: {question}")
         user_answer = prompt.string('Your answer: ')
         if user_answer == answer:

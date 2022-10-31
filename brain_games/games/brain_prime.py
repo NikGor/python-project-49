@@ -1,5 +1,5 @@
 import random
-from brain_games.game import MAX_VALUE
+from brain_games.engine import MAX_VALUE
 
 
 RULES = 'Answer "yes" if given number is prime. Otherwise answer "no".'

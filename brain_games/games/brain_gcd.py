@@ -1,5 +1,5 @@
 import random
-from brain_games.game import MAX_VALUE
+from brain_games.engine import MAX_VALUE
 
 RULES = 'Find the greatest common divisor of given numbers.'
 
@@ -16,6 +16,6 @@ def get_gcd(number1, number2):
         return max(number1, number2)
     else:
         if number1 > number2:
-            return get_gcd(number1 - number2, number2)
+            return get_gcd(number1 % number2, number2)
         else:
-            return get_gcd(number1, number2 - number1)
+            return get_gcd(number1, number2 % number1)
