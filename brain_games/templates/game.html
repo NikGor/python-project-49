@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container border p-5 w-50 mb-5">
+    <h1 class="h1 mb-3 text-center">{{ game }}</h1>
+    <form method="POST">
+        {% if question %}
+            <div class="row mb-3">
+                <div class="col-sm-12 col-md-8">
+                    <h3 class="h3">Question: {{ question }}</h3>
+                </div>
+            </div>
+            <div class="row mb-5">
+                <div class="col-md-4">
+                    <h3 class="h3">Your answer: </h3>
+                    {{ form.answer(class="form-control") }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-1 mb-5">
+                    {{ form.submit(class="btn btn-primary btn-lg") }}
+                </div>
+            </div>
+        {% else %}
+            {% if session.correct_answers == 3 %}
+                <div class="row">
+                    <div class="col-md-12 mb-3">
+                        <h3 class="h3 text-center">Congratulations, !</h3>
+                    </div>
+                </div>
+            {% endif %}
+            <div class="row">
+                <div class="col-md-12 mb-3">
+                    <a href="{{ url_for('start_game', game=game) }}" class="btn btn-primary btn-lg">Start Over</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <a href="{{ url_for('index') }}" class="btn btn-primary btn-lg">Return to Main</a>
+                </div>
+            </div>
+        {% endif %}
+    </form>
+    {% include 'bar.html' %}
+</div>
+{% endblock %}

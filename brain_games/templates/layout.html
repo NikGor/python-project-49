@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Brain Games</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+  .rounded-gradient {
+    background: radial-gradient(at bottom center, #ffffff 70%, transparent 90%), #ecb7bd;
+  }
+    footer {
+      background-color: #579ba4;
+    }
+  .btn-primary {
+    background-color: #a55af4;
+    border-color: #a55af4;
+    color: #fff; /* Белый цвет для текста */
+  }
+  .btn-primary:hover {
+    background-color: #8549c0;
+    border-color: #8549c0;
+    color: #fff;
+  }
+  .btn-primary:active {
+    background-color: #6d39a2;
+    border-color: #6d39a2;
+    color: #fff;
+  }
+</style>
+<body>
+    <div class="rounded-gradient" style = "height: 500px">
+        <div class="d-flex justify-content-center">
+            <div class="card w-25 mt-5">
+                <h1 class="h1 text-center py-4">Brain Games</h1>
+            </div>
+        </div>
+    </div>
+    {% block content %}{% endblock %}
+    <div class="d-flex row mx-3 justify-content-center">
+        {% for game in games %}
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card my-4">
+                <div class="card-body">
+                    <h5 class="card-title">{{ game.name }}</h5>
+                    <p class="card-text mh-75">{{ game.description }}</p>
+                    <a href="{{ url_for('start_game', game=game.name) }}" class="btn btn-primary btn-lg">Play</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <footer class="text-white">
+      <div class="container">
+        <div class="row py-3 d-flex justify-content-center">
+          <div class="col-md-2">
+            <div class="card border bg-transparent" style="height: 50px"></div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
