@@ -1,0 +1,21 @@
+.rounded-gradient {
+background: radial-gradient(at bottom center, #ffffff 70%, transparent 90%), #ecb7bd;
+}
+footer {
+  background-color: #579ba4;
+}
+.btn-primary {
+background-color: #a55af4;
+border-color: #a55af4;
+color: #fff; /* Белый цвет для текста */
+}
+.btn-primary:hover {
+background-color: #8549c0;
+border-color: #8549c0;
+color: #fff;
+}
+.btn-primary:active {
+background-color: #6d39a2;
+border-color: #6d39a2;
+color: #fff;
+}

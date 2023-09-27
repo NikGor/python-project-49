@@ -3,32 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Brain Games</title>
-    <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/main.css" rel="stylesheet">
 </head>
-<style>
-  .rounded-gradient {
-    background: radial-gradient(at bottom center, #ffffff 70%, transparent 90%), #ecb7bd;
-  }
-    footer {
-      background-color: #579ba4;
-    }
-  .btn-primary {
-    background-color: #a55af4;
-    border-color: #a55af4;
-    color: #fff; /* Белый цвет для текста */
-  }
-  .btn-primary:hover {
-    background-color: #8549c0;
-    border-color: #8549c0;
-    color: #fff;
-  }
-  .btn-primary:active {
-    background-color: #6d39a2;
-    border-color: #6d39a2;
-    color: #fff;
-  }
-</style>
 <body>
     <div class="rounded-gradient" style = "height: 500px">
         <div class="d-flex justify-content-center">
@@ -38,14 +15,39 @@
         </div>
     </div>
     {% block content %}{% endblock %}
+    <!-- Всплывающее окно -->
+    <div class="modal" tabindex="-1" id="apiResultModal">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-body d-flex flex-column align-items-center justify-content-center" style="height: 400px;">
+            <h4 class="card-title" id="rules">Rules</h4>
+            <h1 class="card-title" id="question">Question</h1>
+            <h4 class="card-text" id="answer" style="display: none;">Answer</h4>
+          </div>
+          <div class="modal-footer">
+            <input class="form-control p-4 col-4" type="text" id="userAnswer" placeholder="Your answer"
+                   style="font-size: 1.5rem;">
+            <button id="submitBtn" onclick="checkAnswer()" class="btn btn-primary btn-lg">Submit</button>
+            <button id="tryAgain" onclick="restartGame()" class="btn btn-primary btn-lg" style="display: none;">
+                Try Again
+            </button>
+            <button type="button" class="btn btn-secondary btn-lg" onclick="closeModal()">
+                Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Конец всплывающего окна -->
     <div class="d-flex row mx-3 justify-content-center">
         {% for game in games %}
-        <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="col-lg-2 col-md-12">
             <div class="card my-4">
                 <div class="card-body">
-                    <h5 class="card-title">{{ game.name }}</h5>
+                    <h2 class="card-title">
+                        <a href="#" data-name="{{ game.name }}" onclick="fetchGameData(this.getAttribute('data-name'))">{{ game.name }}</a>
+                    </h2>
                     <p class="card-text mh-75">{{ game.description }}</p>
-                    <a href="{{ url_for('start_game', game=game.name) }}" class="btn btn-primary btn-lg">Play</a>
                 </div>
             </div>
         </div>
@@ -61,5 +63,6 @@
       </div>
     </footer>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="/static/app.js"></script>
 </body>
 </html>
